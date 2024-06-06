@@ -1,0 +1,121 @@
+/* TodoApp.css */
+
+/* Base Styles */
+body {
+  background-color: black;
+}
+
+.todo-container {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  width: 90%; /* Adjusted for mobile first */
+  margin: 20px auto;
+  border-radius: 8px;
+}
+
+.todo-input, .todo-button, .todo-filter-button {
+  padding: 8px; /* Adjusted for touch */
+  margin: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.todo-input {
+  width: 70%;
+}
+
+.todo-button {
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+}
+
+.todo-button:hover {
+  background-color: #0056b3;
+}
+
+.todo-filter-button {
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  border: 2px solid transparent; /* Updated for better UI */
+  transition: all 0.3s ease;
+}
+
+.todo-filter-button:hover,
+.todo-filter-button.active { /* Active state shares hover properties */
+  background-color: #666;
+  border-color: #0056b3;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-item {
+  padding: 10px;
+  border-bottom: 1px solid #444;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-item button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  float: right;
+}
+
+.task-item button:hover {
+  background-color: #bd2130;
+}
+
+/* Flexbox Settings for Button Groups */
+.others,
+.left,
+.completed {
+  display: flex;
+  justify-content: center;
+}
+
+.allbtn {
+  width: auto; /* Flexible width for better responsiveness */
+  background-color: #0056b3;
+  color: white;
+  padding: 6px 12px;
+  font-size: 14px; /* Smaller font for mobile */
+  transition: background-color 0.3s ease;
+}
+
+.allbtn:hover {
+  background-color: #004080;
+}
+
+/* Responsive Design Adjustments */
+@media (min-width: 768px) {
+  .todo-container {
+      width: 80%; /* Slightly larger for tablets */
+  }
+
+  .todo-input, .todo-button, .todo-filter-button, .allbtn {
+      padding: 10px 20px; /* More padding for larger devices */
+      font-size: 16px; /* Increase font size for readability */
+  }
+}
+
+@media (min-width: 1024px) {
+  .todo-container {
+      width: 70%; /* More constrained for desktops */
+  }
+
+  .todo-button, .todo-filter-button, .allbtn {
+      padding: 12px 24px; /* Even more padding */
+      font-size: 18px; /* Larger font size */
+  }
+}
